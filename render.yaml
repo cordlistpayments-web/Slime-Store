@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: nothing-special-studios-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    healthCheckPath: /health
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: GUILD_ID
+        sync: false
+      - key: STAFF_ROLE_ID
+        sync: false
+      - key: WELCOME_CHANNEL_ID
+        sync: false
+      - key: LOG_CHANNEL_ID
+        sync: false
+      - key: EMBED_IMAGE_URL
+        sync: false
